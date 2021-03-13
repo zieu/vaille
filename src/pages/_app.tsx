@@ -1,4 +1,3 @@
-import "Styles/app.scss";
 import NProgress from "nprogress";
 
 import { AppProps } from "next/app";
@@ -7,6 +6,8 @@ import Router from "next/router";
 import { Fragment } from "react";
 
 import { PageWithLayout } from "types/";
+
+import "styles/app.scss";
 
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
