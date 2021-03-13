@@ -1,8 +1,12 @@
-import "assets/scss/app.scss";
+import "Styles/app.scss";
+import NProgress from "nprogress";
+
 import { AppProps } from "next/app";
 import Router from "next/router";
-import NProgress from "nprogress";
-import { PageWithLayout } from "types";
+
+import { Fragment } from "react";
+
+import { PageWithLayout } from "types/";
 
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -14,7 +18,14 @@ type Props = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: Props) {
-	return <Component {...pageProps} />;
+	const Layout = Component.Layout ?? Fragment;
+	return (
+		<>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		</>
+	);
 }
 
 export default MyApp;

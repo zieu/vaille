@@ -7,5 +7,20 @@
 	"trailingComma": "all",
 	"bracketSpacing": true,
 	"jsxBracketSameLine": true,
-	"endOfLine": "auto"
+	"endOfLine": "auto",
+	"importOrder": [
+		"^next",
+		"^react",
+		"assets/(.*)$",
+		"types/(.*)$",
+		"utils/(.*)$",
+		"constants/(.*)$",
+		"services/(.*)$",
+		"hooks/(.*)$",
+		"containers/(.*)$",
+		"components/(.*)$",
+		"styles/(.*)$",
+		"^[./]"
+	],
+	"importOrderSeparation": true
 }
