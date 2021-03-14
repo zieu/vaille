@@ -1,5 +1,5 @@
 const Right = () => {
-	return <div>Right</div>;
+	return <div className="">Right</div>;
 };
 
 export default Right;

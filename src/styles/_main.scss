@@ -1,5 +1,9 @@
 @import "~styles/variables";
 
+html {
+	font-family: $font-family-base;
+}
+
 body {
 	background-color: $background;
 }

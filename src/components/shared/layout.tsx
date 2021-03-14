@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Left, Right, Main } from "./layout/";
+import { Left, Right } from "./layout/";
 
 type Props = {
 	children?: React.FC | React.ReactNode;
@@ -8,11 +8,11 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<>
+		<div className="grid grid-cols-3">
 			<Left />
-			<Main>{children}</Main>
+			<div>{children}</div>
 			<Right />
-		</>
+		</div>
 	);
 };
 

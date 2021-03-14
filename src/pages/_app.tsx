@@ -1,11 +1,11 @@
 import NProgress from "nprogress";
+import "tailwindcss/tailwind.css";
+import { PageWithLayout } from "types";
 
 import { AppProps } from "next/app";
 import Router from "next/router";
 
 import { Fragment } from "react";
-
-import { PageWithLayout } from "types/";
 
 import "styles/app.scss";
 
