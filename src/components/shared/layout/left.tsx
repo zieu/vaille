@@ -1,7 +1,7 @@
 const Left = () => {
 	return (
-		<div className="bg-red-700">
-			<p className="text-white">left</p>
+		<div className="bg-white dark:bg-dark-deep col-span-3 lg:w-[35vw] w-[100px]">
+			<p className="dark:text-white text-dark-off">left</p>
 		</div>
 	);
 };

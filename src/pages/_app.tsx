@@ -2,6 +2,7 @@ import NProgress from "nprogress";
 import "tailwindcss/tailwind.css";
 import { PageWithLayout } from "types";
 
+import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import Router from "next/router";
 
@@ -22,9 +23,11 @@ function MyApp({ Component, pageProps }: Props) {
 	const Layout = Component.Layout ?? Fragment;
 	return (
 		<>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<ThemeProvider attribute="class">
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</ThemeProvider>
 		</>
 	);
 }

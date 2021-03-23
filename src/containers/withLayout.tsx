@@ -4,7 +4,6 @@ import { Layout } from "components/shared";
 
 const withLayout = (Component: PageWithLayout) => {
 	Component.Layout = Layout;
-
 	return Component;
 };
 

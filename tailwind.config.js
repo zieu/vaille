@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
 	purge: ["./src/**/*.tsx"],
-	darkMode: false, // or 'media' or 'class'
+	darkMode: "class", // or 'media' or 'class'
 	theme: {
 		screens: {
 			sm: "480px",
@@ -10,16 +10,28 @@ module.exports = {
 			lg: "976px",
 			xl: "1440px",
 		},
-		colors: {
-			gray: colors.coolGray,
-			blue: colors.lightBlue,
-			red: colors.rose,
-			pink: colors.fuchsia,
-		},
 		extend: {
-			spacing: {
-				128: "32rem",
-				144: "36rem",
+			colors: {
+				primary: {
+					purple: "#5E2CED",
+					pink: "#ED2C71",
+				},
+				just: {
+					gray: "#ABB0BD",
+				},
+				light: {
+					shiny: "#FFFFFF",
+					grayish: "#EFEFF3",
+					grayer: "#DADAE2",
+					text: "#2E3A59",
+				},
+				dark: {
+					off: "#1A1A23",
+					deep: "#1E1E29",
+					cloud: "#252532",
+					lie: "#303040",
+				},
+				lightGray: "#EFEFEC",
 			},
 			borderRadius: {
 				"4xl": "2rem",
