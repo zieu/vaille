@@ -1,1 +1,12 @@
+@import "~styles/variables";
 @import "react-select";
+
+#nprogress .bar {
+	background: $primary !important;
+	box-shadow: 0 0 10px $primary;
+	height: 2px;
+}
+
+#nprogress .peg {
+	background: rgb(21, 255, 0);
+}

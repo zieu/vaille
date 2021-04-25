@@ -1,4 +1,5 @@
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 const Home = () => {
 	const { theme, setTheme } = useTheme();
@@ -9,6 +10,9 @@ const Home = () => {
 				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
 				toggle theme
 			</button>
+			<Link href="another-page">
+				<a className="text-purple-700 underline">go to another page</a>
+			</Link>
 		</div>
 	);
 };
