@@ -16,6 +16,7 @@ NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
+
 type Props = AppProps & {
 	Component: PageWithLayout;
 };
@@ -27,7 +28,6 @@ function MyApp({ Component, pageProps }: Props) {
 			<ThemeProvider attribute="class">
 				<Layout>
 					<Component {...pageProps} />
-					<button onClick={() => NProgress.start()}>start</button>
 				</Layout>
 			</ThemeProvider>
 		</>

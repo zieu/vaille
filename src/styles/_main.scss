@@ -29,3 +29,18 @@ a {
 	font-size: 40px;
 	color: #fff;
 }
+
+.menu-button--active {
+	position: relative;
+	background: rgba(37, 37, 50);
+	&::before {
+		content: "";
+		width: 6px;
+		height: 6px;
+		background: #fff;
+		position: absolute;
+		border-radius: 50%;
+		left: 6px;
+		top: calc(50% - 3px);
+	}
+}

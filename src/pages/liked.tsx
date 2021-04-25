@@ -2,13 +2,13 @@ import { withLayout } from "containers";
 
 import Head from "next/head";
 
-import Page from "components/pages/anotherPage";
+import Page from "components/pages/liked";
 
-function Home() {
+function Liked() {
 	return (
 		<div>
 			<Head>
-				<title>Vaille</title>
+				<title>Vaille | Liked</title>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
 
@@ -17,4 +17,4 @@ function Home() {
 	);
 }
 
-export default withLayout(Home);
+export default withLayout(Liked);

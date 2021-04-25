@@ -10,8 +10,8 @@ const Home = () => {
 				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
 				toggle theme
 			</button>
-			<Link href="another-page">
-				<a className="text-purple-700 underline">go to another page</a>
+			<Link href="/liked">
+				<a className="text-purple-700 underline">go to liked</a>
 			</Link>
 		</div>
 	);
