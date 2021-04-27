@@ -12,6 +12,7 @@ function Home() {
 				<title>Vaille</title>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
+
 			<PageTitle pageTitle="Feed" />
 			<Page />
 		</div>

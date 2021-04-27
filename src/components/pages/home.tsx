@@ -1,18 +1,130 @@
-import { useTheme } from "next-themes";
-import Link from "next/link";
+import { PostDTO } from "types";
+
+import { PostCard } from "components/shared";
+
+const mock: PostDTO[] = [
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore pariatur eveniet reiciendis dicta autem amet molestias dolorem consectetur sequi, odit enim eaque rerum consequuntur minima? Recusandae, accusamus at neque nemo deleniti omnis magnam voluptatem maiores corporis sed ducimus architecto fugiat numquam nobis esse in voluptas vero ullam doloribus nesciunt aperiam! Aspernatur, laudantium eos? ",
+		title: "this is lorem",
+		user: {},
+		image: "",
+	},
+	{
+		content:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod maiores sed incidunt reprehenderit doloremque sunt illum sit error voluptate, debitis animi a ratione earum inventore, dolores sapiente neque. Harum impedit, sint facere, similique accusantium nihil ducimus laborum dolore in consequatur, at fuga? Libero ducimus quaerat tempore vero vitae, dolores quisquam!",
+		title: "another one",
+		user: {},
+		image: "",
+	},
+];
 
 const Home = () => {
-	const { theme, setTheme } = useTheme();
 	return (
 		<div className="h-full min-h-screen">
-			<button
-				className="m-4 px-3 py-2 focus:outline-none focus:ring-2 ring-offset-2 rounded-lg bg-primary-purple dark:bg-white ring-primary-purple dark:ring-white ring-offset-white dark:ring-offset-dark-off text-gray-50 dark:text-black"
-				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-				toggle theme
-			</button>
-			<Link href="/liked">
-				<a className="text-purple-700 underline">go to liked</a>
-			</Link>
+			<div className="p-6">
+				{mock.map((props, index) => (
+					<PostCard {...props} key={index} />
+				))}
+			</div>
 		</div>
 	);
 };
