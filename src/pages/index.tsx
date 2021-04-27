@@ -3,6 +3,7 @@ import { withLayout } from "containers";
 import Head from "next/head";
 
 import Page from "components/pages/home";
+import { PageTitle } from "components/shared";
 
 function Home() {
 	return (
@@ -11,7 +12,7 @@ function Home() {
 				<title>Vaille</title>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
-
+			<PageTitle pageTitle="Feed" />
 			<Page />
 		</div>
 	);

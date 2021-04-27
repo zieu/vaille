@@ -3,6 +3,7 @@ import { withLayout } from "containers";
 import Head from "next/head";
 
 import Page from "components/pages/liked";
+import { PageTitle } from "components/shared";
 
 function Analytics() {
 	return (
@@ -12,6 +13,7 @@ function Analytics() {
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
 
+			<PageTitle pageTitle="Analytics" />
 			<Page />
 		</div>
 	);
