@@ -33,15 +33,29 @@ a {
 
 .menu-button--active {
 	position: relative;
-	background: rgba(37, 37, 50);
 	&::before {
 		content: "";
 		width: 6px;
 		height: 6px;
-		background: #fff;
 		position: absolute;
 		border-radius: 50%;
 		left: 6px;
 		top: calc(50% - 3px);
 	}
+	&--light {
+		background: #efeff3;
+		&::before {
+			background: #252532;
+		}
+	}
+	&--dark {
+		background: #252532;
+		&::before {
+			background: #efeff3;
+		}
+	}
+}
+
+.menu-icon--light * {
+	fill: #252532;
 }
