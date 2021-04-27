@@ -16,7 +16,13 @@ const User = ({ avatar, isFollowed, name }: Props) => {
 				/>
 				<span className="text-lg">{name}</span>
 			</div>
-			<button className="border rounded-lg px-2 py-1">Following</button>
+			{isFollowed ? (
+				<button className="bg-primary-purple border-primary-purple rounded-lg px-3 py-1 font-bold focus:outline-none focus:ring-2">
+					Following
+				</button>
+			) : (
+				<button className="border rounded-lg px-3 py-1 font-bold focus:outline-none focus:ring-2">Follow</button>
+			)}
 		</div>
 	);
 };
