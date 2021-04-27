@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: Props) {
 	const Layout = Component.Layout ?? Fragment;
 	return (
 		<>
-			<ThemeProvider attribute="class">
+			<ThemeProvider attribute="class" defaultTheme="dark">
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
