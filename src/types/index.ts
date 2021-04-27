@@ -6,9 +6,15 @@ export type PageWithLayout = NextPage & {
 	Layout?: FC;
 };
 
+export type UserDTO = {
+	avatar: string;
+	name: string;
+	isFollowed: boolean;
+}
+
 export type PostDTO = {
 	title: string;
-	user: object;
+	user: UserDTO;
 	content: string;
 	image?: string;
 }
