@@ -17,17 +17,16 @@ const MenuButton = ({ link, label, icon }: Props) => {
 	const active = pathname === link;
 	return (
 		<Link href={link!}>
-			<a>
-				<div
-					className={cn("hover:bg-dark-cloud py-3 px-5 text-lg mb-2 font-semibold rounded-xl", {
-						"menu-button--active": active,
-					})}>
+			<div
+				className={cn("hover:bg-dark-cloud py-3 px-5 text-lg mb-2 font-semibold rounded-xl cursor-pointer", {
+					"menu-button--active": active,
+				})}>
+				<a>
 					<div className="flex items-center">
-						<span className="">{active && icon ? icon[1] : icon && !active && icon[0]}</span>{" "}
-						<span className="ml-2">{label}</span>
+						<span>{active && icon ? icon[1] : icon && !active && icon[0]}</span> <span className="ml-4">{label}</span>
 					</div>
-				</div>
-			</a>
+				</a>
+			</div>
 		</Link>
 	);
 };
