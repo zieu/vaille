@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import Link from "next/link";
 
 const Notifications = () => {
