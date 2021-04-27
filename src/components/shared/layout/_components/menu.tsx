@@ -1,7 +1,7 @@
 import React from "react";
 
-import MenuButton from "./_menu-button";
-import * as icons from "./menu-icons";
+import * as icons from "./_menu-icons";
+import MenuButton from "./menu-button";
 
 const Menu = () => {
 	const buttons = [
