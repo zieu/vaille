@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Left, Right } from "./layout/";
+import { Left, Right } from ".";
 
 type Props = {
 	children?: React.FC | React.ReactNode;
