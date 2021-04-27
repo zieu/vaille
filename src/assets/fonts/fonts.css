@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Gilroy";
-	src: url("gilroy-medium.woff2") format("woff2"), url("gilroy-medium.woff") format("woff");
+	src: url("Gilroy-Medium.woff2") format("woff2"), url("Gilroy-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
 }
@@ -14,7 +14,7 @@
 
 @font-face {
 	font-family: "Gilroy";
-	src: url("gilroy-regular.woff2") format("woff2"), url("gilroy-regular.woff") format("woff");
+	src: url("Gilroy-Regular.woff2") format("woff2"), url("Gilroy-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
