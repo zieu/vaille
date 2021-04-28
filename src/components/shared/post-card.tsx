@@ -1,18 +1,49 @@
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { PostDTO } from "types";
+
+import { useState } from "react";
 
 import { User } from ".";
 
 type Props = PostDTO;
 
 const PostCard = ({ title, user, content, image }: Props) => {
+	const [menuOpened, setMenuOpened] = useState<boolean>(false);
+
 	const buttonClassName =
 		"dark:bg-dark-cloud bg-white dark:text-white text-light-text px-2 py-2 w-[90px] rounded-lg text-sm font-bold flex items-center justify-center";
 	return (
 		<div className="mb-5 w-96">
 			<User {...user} />
-			<div className="bg-dark-cloud p-4 rounded-lg">
+			<div className="bg-dark-cloud p-4 rounded-lg relative">
 				<h2 className="font-bold text-lg mb-2">{title}</h2>
 				<p className="text-sm">{content}</p>
+
+				<div
+					className="w-8 h-8 bg-dark-cloud absolute -right-10 top-4 rounded-full cursor-pointer hover:bg-dark-lie"
+					onClick={() => setMenuOpened(!menuOpened)}>
+					<div className="flex justify-between p-[7px] pt-[13.5px]">
+						<div className="w-1 h-1 rounded-full bg-white"></div>
+						<div className="w-1 h-1 rounded-full bg-white"></div>
+						<div className="w-1 h-1 rounded-full bg-white"></div>
+					</div>
+				</div>
+				{menuOpened && (
+					<AnimatePresence>
+						<motion.ul
+							layout
+							// animate={menuOpened ? "open" : "closed"}
+							animate={{ y: 0, opacity: 1 }}
+							transition={{ type: "spring", bounce: 0.5, duration: 0.5 }}
+							initial={{ y: 20, opacity: 0 }}
+							exit={{ opacity: 0 }}
+							className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl bg-dark-cloud">
+							<motion.li className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">Item</motion.li>
+							<motion.li className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">Item 2</motion.li>
+							<motion.li className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">Item 3</motion.li>
+						</motion.ul>
+					</AnimatePresence>
+				)}
 			</div>
 			<div className="flex justify-between mt-2">
 				<button className={buttonClassName}>
