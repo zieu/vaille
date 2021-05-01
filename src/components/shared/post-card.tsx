@@ -1,7 +1,8 @@
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { PostDTO } from "types";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useClickAway } from "react-use";
 
 import { User } from ".";
 
@@ -10,8 +11,26 @@ type Props = PostDTO;
 const PostCard = ({ title, user, content, image }: Props) => {
 	const [menuOpened, setMenuOpened] = useState<boolean>(false);
 
+	// closing menu when clicking away
+	const menuButtonRef = useRef(null);
+	useClickAway(menuButtonRef, () => {
+		setMenuOpened(false);
+	});
+
 	const buttonClassName =
 		"dark:bg-dark-cloud bg-white dark:text-white text-light-text px-2 py-2 w-[90px] rounded-lg text-sm font-bold flex items-center justify-center";
+	const menuMotion = {
+		hidden: { y: 10, opacity: 0 },
+		show: {
+			y: 0,
+			x: 0,
+			opacity: 1,
+		},
+	};
+	const menuItemMotion = {
+		hidden: { y: 20, opacity: 0 },
+		show: { y: 0, opacity: 1 },
+	};
 	return (
 		<div className="mb-5 w-96">
 			<User {...user} />
@@ -21,6 +40,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 
 				<div
 					className="w-8 h-8 bg-dark-cloud absolute -right-10 top-4 rounded-full cursor-pointer hover:bg-dark-lie"
+					ref={menuButtonRef}
 					onClick={() => setMenuOpened(!menuOpened)}>
 					<div className="flex justify-between p-[7px] pt-[13.5px]">
 						<div className="w-1 h-1 rounded-full bg-white"></div>
@@ -28,22 +48,43 @@ const PostCard = ({ title, user, content, image }: Props) => {
 						<div className="w-1 h-1 rounded-full bg-white"></div>
 					</div>
 				</div>
-				{menuOpened && (
-					<AnimatePresence>
+				<AnimatePresence>
+					{menuOpened && (
 						<motion.ul
-							layout
-							// animate={menuOpened ? "open" : "closed"}
-							animate={{ y: 0, opacity: 1 }}
-							transition={{ type: "spring", bounce: 0.5, duration: 0.5 }}
-							initial={{ y: 20, opacity: 0 }}
-							exit={{ opacity: 0 }}
+							key="menu"
+							initial="hidden"
+							animate="show"
+							variants={menuMotion}
+							exit={{ opacity: 0, y: 10 }}
+							transition={{ type: "spring", duration: 0.2, bounce: 0.2 }}
 							className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl bg-dark-cloud">
-							<motion.li className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">Item</motion.li>
-							<motion.li className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">Item 2</motion.li>
-							<motion.li className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">Item 3</motion.li>
+							<motion.li
+								variants={menuItemMotion}
+								initial="hidden"
+								animate="show"
+								transition={{ delay: 0.01 }}
+								className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+								Item
+							</motion.li>
+							<motion.li
+								variants={menuItemMotion}
+								initial="hidden"
+								animate="show"
+								transition={{ delay: 0.03 }}
+								className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+								Item 2
+							</motion.li>
+							<motion.li
+								variants={menuItemMotion}
+								initial="hidden"
+								animate="show"
+								transition={{ delay: 0.05 }}
+								className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+								Item 3
+							</motion.li>
 						</motion.ul>
-					</AnimatePresence>
-				)}
+					)}
+				</AnimatePresence>
 			</div>
 			<div className="flex justify-between mt-2">
 				<button className={buttonClassName}>
