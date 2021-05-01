@@ -2,12 +2,15 @@ import { useTheme } from "next-themes";
 
 import { Moon, Sun } from "assets/icons";
 
+import { useLoaded } from "hooks/utils";
+
 interface Props {
 	pageTitle: string;
 }
 
 const PageTitle = ({ pageTitle }: Props) => {
 	const { theme, setTheme } = useTheme();
+	const loaded = useLoaded();
 
 	return (
 		<div className=" dark:bg-dark-deep py-2 border-b-4 px-6 dark:border-dark-lie border-light-grayer sticky top-0 flex justify-between items-center bg-white z-10">
@@ -17,7 +20,7 @@ const PageTitle = ({ pageTitle }: Props) => {
 			<button
 				className="p-2 rounded-md dark:bg-dark-lie bg-light-grayish focus:outline-none focus:ring-2"
 				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-				{theme === "dark" ? <Sun /> : <Moon />}
+				{theme === "dark" && loaded ? <Sun /> : <Moon />}
 
 				<a className="no-underline"></a>
 			</button>
