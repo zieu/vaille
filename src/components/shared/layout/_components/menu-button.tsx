@@ -17,6 +17,7 @@ const MenuButton = ({ link, label, icon }: Props) => {
 	const { pathname } = useRouter();
 	const { theme } = useTheme();
 	const active = pathname === link;
+
 	return (
 		<Link href={link!}>
 			<div
