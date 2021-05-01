@@ -38,53 +38,54 @@ const PostCard = ({ title, user, content, image }: Props) => {
 				<h2 className="font-bold text-lg mb-2">{title}</h2>
 				<p className="text-sm">{content}</p>
 
-				<div
-					className="w-8 h-8 bg-dark-cloud absolute -right-10 top-4 rounded-full cursor-pointer hover:bg-dark-lie"
-					ref={menuButtonRef}
-					onClick={() => setMenuOpened(!menuOpened)}>
-					<div className="flex justify-between p-[7px] pt-[13.5px]">
-						<div className="w-1 h-1 rounded-full bg-white"></div>
-						<div className="w-1 h-1 rounded-full bg-white"></div>
-						<div className="w-1 h-1 rounded-full bg-white"></div>
+				<div ref={menuButtonRef}>
+					<div
+						className="w-8 h-8 bg-dark-cloud absolute -right-10 top-4 rounded-full cursor-pointer hover:bg-dark-lie"
+						onClick={() => setMenuOpened(!menuOpened)}>
+						<div className="flex justify-between p-[7px] pt-[13.5px]">
+							<div className="w-1 h-1 rounded-full bg-white"></div>
+							<div className="w-1 h-1 rounded-full bg-white"></div>
+							<div className="w-1 h-1 rounded-full bg-white"></div>
+						</div>
 					</div>
+					<AnimatePresence>
+						{menuOpened && (
+							<motion.ul
+								key="menu"
+								initial="hidden"
+								animate="show"
+								variants={menuMotion}
+								exit={{ opacity: 0, y: 10 }}
+								transition={{ type: "spring", duration: 0.2, bounce: 0.2 }}
+								className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl bg-dark-cloud">
+								<motion.li
+									variants={menuItemMotion}
+									initial="hidden"
+									animate="show"
+									transition={{ delay: 0.01 }}
+									className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+									Item
+								</motion.li>
+								<motion.li
+									variants={menuItemMotion}
+									initial="hidden"
+									animate="show"
+									transition={{ delay: 0.03 }}
+									className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+									Item 2
+								</motion.li>
+								<motion.li
+									variants={menuItemMotion}
+									initial="hidden"
+									animate="show"
+									transition={{ delay: 0.05 }}
+									className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+									Item 3
+								</motion.li>
+							</motion.ul>
+						)}
+					</AnimatePresence>
 				</div>
-				<AnimatePresence>
-					{menuOpened && (
-						<motion.ul
-							key="menu"
-							initial="hidden"
-							animate="show"
-							variants={menuMotion}
-							exit={{ opacity: 0, y: 10 }}
-							transition={{ type: "spring", duration: 0.2, bounce: 0.2 }}
-							className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl bg-dark-cloud">
-							<motion.li
-								variants={menuItemMotion}
-								initial="hidden"
-								animate="show"
-								transition={{ delay: 0.01 }}
-								className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
-								Item
-							</motion.li>
-							<motion.li
-								variants={menuItemMotion}
-								initial="hidden"
-								animate="show"
-								transition={{ delay: 0.03 }}
-								className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
-								Item 2
-							</motion.li>
-							<motion.li
-								variants={menuItemMotion}
-								initial="hidden"
-								animate="show"
-								transition={{ delay: 0.05 }}
-								className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
-								Item 3
-							</motion.li>
-						</motion.ul>
-					)}
-				</AnimatePresence>
 			</div>
 			<div className="flex justify-between mt-2">
 				<button className={buttonClassName}>
