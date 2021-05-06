@@ -57,13 +57,13 @@ const PostCard = ({ title, user, content, image }: Props) => {
 								variants={menuMotion}
 								exit={{ opacity: 0, y: 10 }}
 								transition={{ type: "spring", duration: 0.2, bounce: 0.2 }}
-								className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl bg-dark-cloud">
+								className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl dark:bg-dark-cloud bg-white">
 								<motion.li
 									variants={menuItemMotion}
 									initial="hidden"
 									animate="show"
 									transition={{ delay: 0.01 }}
-									className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+									className="p-3 dark:hover:bg-dark-lie hover:bg-light-grayish rounded-lg cursor-pointer select-none">
 									Item
 								</motion.li>
 								<motion.li
@@ -71,7 +71,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 									initial="hidden"
 									animate="show"
 									transition={{ delay: 0.03 }}
-									className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+									className="p-3 dark:hover:bg-dark-lie hover:bg-light-grayish rounded-lg cursor-pointer select-none">
 									Item 2
 								</motion.li>
 								<motion.li
@@ -79,7 +79,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 									initial="hidden"
 									animate="show"
 									transition={{ delay: 0.05 }}
-									className="p-3 hover:bg-dark-lie rounded-lg cursor-pointer select-none">
+									className="p-3 dark:hover:bg-dark-lie hover:bg-light-grayish rounded-lg cursor-pointer select-none">
 									Item 3
 								</motion.li>
 							</motion.ul>

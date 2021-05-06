@@ -26,7 +26,9 @@ const Right = () => {
 
 			<div className="flex items-center justify-between mt-6 mb-4">
 				<h2 className="text-lg font-bold text-light-text dark:text-white">Recommended</h2>
-				<button className="border rounded-lg p-1 px-2 text-sm">See more</button>
+				<button className="border rounded-lg p-1 px-2 text-sm text-light-text dark:text-white dark:border-white border-light-text">
+					See more
+				</button>
 			</div>
 
 			<RecommendedContainer />
