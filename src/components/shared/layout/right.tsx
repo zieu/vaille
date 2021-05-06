@@ -2,7 +2,7 @@ import RecommendedContainer from "./_components/recommended-container";
 
 const Right = () => {
 	return (
-		<div className="bg-white dark:bg-dark-deep col-span-3 lg:w-[35%] h-[100vh] sticky top-0 lg:block hidden p-8">
+		<div className="bg-white dark:bg-dark-deep col-span-3 lg:w-[35%] h-[100vh] sticky top-0 lg:block hidden p-5">
 			<div className="flex items-center">
 				{" "}
 				<svg className="mr-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
