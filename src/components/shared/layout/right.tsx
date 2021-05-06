@@ -1,3 +1,5 @@
+import RecommendedContainer from "./_components/recommended-container";
+
 const Right = () => {
 	return (
 		<div className="bg-white dark:bg-dark-deep col-span-3 lg:w-[35%] h-[100vh] sticky top-0 lg:block hidden p-8">
@@ -22,38 +24,7 @@ const Right = () => {
 				<button className="border rounded-lg p-1 px-2 text-sm">See more</button>
 			</div>
 
-			<div className="bg-dark-cloud p-3 rounded-xl">
-				<div className="flex flex-wrap justify-between">
-					<div className="flex flex-col items-center m-2 cursor-pointer">
-						<img className="w-12 rounded-full border-2 mb-2" src="/profile-pic.jpg" alt="avatar" />
-						<p className="font-bold text-xs">_smithjohn</p>
-					</div>
-
-					<div className="flex flex-col items-center m-2">
-						<img className="w-12 rounded-full border-2 mb-2" src="/profile-pic.jpg" alt="avatar" />
-						<p className="font-bold text-xs">_smithjohn</p>
-					</div>
-
-					<div className="flex flex-col items-center m-2">
-						<img className="w-12 rounded-full border-2 mb-2" src="/profile-pic.jpg" alt="avatar" />
-						<p className="font-bold text-xs">_smithjohn</p>
-					</div>
-
-					<div className="flex flex-col items-center m-2">
-						<img className="w-12 rounded-full border-2 mb-2" src="/profile-pic.jpg" alt="avatar" />
-						<p className="font-bold text-xs">_smithjohn</p>
-					</div>
-					<div className="flex flex-col items-center m-2">
-						<img className="w-12 rounded-full border-2 mb-2" src="/profile-pic.jpg" alt="avatar" />
-						<p className="font-bold text-xs">_smithjohn</p>
-					</div>
-
-					<div className="flex flex-col items-center m-2">
-						<img className="w-12 rounded-full border-2 mb-2" src="/profile-pic.jpg" alt="avatar" />
-						<p className="font-bold text-xs">_smithjohn</p>
-					</div>
-				</div>
-			</div>
+			<RecommendedContainer />
 		</div>
 	);
 };
