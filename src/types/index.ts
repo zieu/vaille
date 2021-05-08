@@ -10,11 +10,11 @@ export type UserDTO = {
 	avatar: string;
 	name: string;
 	isFollowed: boolean;
-}
+};
 
 export type PostDTO = {
 	title: string;
 	user: UserDTO;
 	content: string;
 	image?: string;
-}
+};
