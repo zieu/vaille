@@ -10,7 +10,7 @@ const RecommendedContainer = () => {
 		{ name: "_smithjohn", img: "/profile-pic.jpg" },
 	];
 	return (
-		<div className="dark:bg-dark-cloud bg-light-grayish p-3 rounded-xl">
+		<div className="p-3 dark:bg-dark-cloud bg-light-grayish rounded-xl">
 			<div className="flex flex-wrap justify-between">
 				{profiles.map(({ img, name }, index) => (
 					<ProfileCircle key={index} name={name} avatar={img} />

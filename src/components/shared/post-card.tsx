@@ -34,13 +34,13 @@ const PostCard = ({ title, user, content, image }: Props) => {
 	return (
 		<div className="mb-5 w-96">
 			<User {...user} />
-			<div className="dark:bg-dark-cloud bg-white dark:text-white text-light-text py-3 px-4 rounded-lg relative">
-				<h2 className="font-bold text-lg mb-2">{title}</h2>
+			<div className="relative px-4 py-3 bg-white rounded-lg dark:bg-dark-cloud dark:text-white text-light-text">
+				<h2 className="mb-2 text-lg font-bold">{title}</h2>
 				<p className="text-sm font-medium">{content}</p>
 
 				<div ref={menuButtonRef}>
 					<div
-						className="w-8 h-8 dark:bg-dark-cloud absolute bg-white -right-10 top-4 rounded-full cursor-pointer dark:hover:bg-dark-lie hover:bg-white"
+						className="absolute w-8 h-8 bg-white rounded-full cursor-pointer dark:bg-dark-cloud -right-10 top-4 dark:hover:bg-dark-lie hover:bg-white"
 						onClick={() => setMenuOpened(!menuOpened)}>
 						<div className="flex justify-between p-[7px] pt-[13.5px]">
 							<div className="w-1 h-1 rounded-full dark:bg-white bg-light-text"></div>
@@ -57,13 +57,13 @@ const PostCard = ({ title, user, content, image }: Props) => {
 								variants={menuMotion}
 								exit={{ opacity: 0, y: 10 }}
 								transition={{ type: "spring", duration: 0.2, bounce: 0.2 }}
-								className="absolute -right-60 px-1 py-2 top-0 w-48 rounded-xl dark:bg-dark-cloud bg-white">
+								className="absolute top-0 w-48 px-1 py-2 bg-white -right-60 rounded-xl dark:bg-dark-cloud">
 								<motion.li
 									variants={menuItemMotion}
 									initial="hidden"
 									animate="show"
 									transition={{ delay: 0.01 }}
-									className="p-3 dark:hover:bg-dark-lie hover:bg-light-grayish rounded-lg cursor-pointer select-none">
+									className="p-3 rounded-lg cursor-pointer select-none dark:hover:bg-dark-lie hover:bg-light-grayish">
 									Item
 								</motion.li>
 								<motion.li
@@ -71,7 +71,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 									initial="hidden"
 									animate="show"
 									transition={{ delay: 0.03 }}
-									className="p-3 dark:hover:bg-dark-lie hover:bg-light-grayish rounded-lg cursor-pointer select-none">
+									className="p-3 rounded-lg cursor-pointer select-none dark:hover:bg-dark-lie hover:bg-light-grayish">
 									Item 2
 								</motion.li>
 								<motion.li
@@ -79,7 +79,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 									initial="hidden"
 									animate="show"
 									transition={{ delay: 0.05 }}
-									className="p-3 dark:hover:bg-dark-lie hover:bg-light-grayish rounded-lg cursor-pointer select-none">
+									className="p-3 rounded-lg cursor-pointer select-none dark:hover:bg-dark-lie hover:bg-light-grayish">
 									Item 3
 								</motion.li>
 							</motion.ul>

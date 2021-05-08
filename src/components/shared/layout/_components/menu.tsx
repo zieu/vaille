@@ -17,6 +17,7 @@ const Menu = () => {
 		{ label: "Analytics", link: "/analytics", icon: icons.analytics },
 		{ label: "Settings", link: "/settings", icon: icons.settings },
 	];
+
 	return <div className="flex flex-col text-white">{loaded && buttons.map((props, index) => <MenuButton key={index} {...props} />)}</div>;
 };
 

@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
 	return (
 		<div className="flex">
 			<Left />
-			<div className="bg-light-grayish dark:bg-dark-off w-full">{children}</div>
+			<div className="w-full bg-light-grayish dark:bg-dark-off">{children}</div>
 			<Right />
 		</div>
 	);

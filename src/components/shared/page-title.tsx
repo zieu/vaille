@@ -13,7 +13,7 @@ const PageTitle = ({ pageTitle }: Props) => {
 	const loaded = useLoaded();
 
 	return (
-		<div className=" dark:bg-dark-deep py-2 border-b-4 px-6 dark:border-dark-lie border-light-grayer sticky top-0 flex justify-between items-center bg-white z-10">
+		<div className="sticky top-0 z-10 flex items-center justify-between px-6 py-2 bg-white border-b-4  dark:bg-dark-deep dark:border-dark-lie border-light-grayer">
 			<h1 className="text-xl font-bold text-light-text dark:text-white ">
 				{pageTitle ? pageTitle : <span className="font-thin text-gray-500">Loading...</span>}
 			</h1>

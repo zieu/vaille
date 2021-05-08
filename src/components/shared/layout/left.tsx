@@ -13,7 +13,7 @@ const Left = () => {
 						<a>
 							<div className="flex items-center p-2 pl-0">
 								<Logo />
-								<span className="text-light-text dark:text-white text-3xl font-bold ml-3">vaille</span>
+								<span className="ml-3 text-3xl font-bold text-light-text dark:text-white">vaille</span>
 							</div>
 						</a>
 					</Link>

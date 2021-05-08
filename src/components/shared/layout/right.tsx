@@ -2,7 +2,7 @@ import RecommendedContainer from "./_components/recommended-container";
 
 const Right = () => {
 	return (
-		<div className="bg-white dark:bg-dark-deep col-span-3 lg:w-[35%] h-[100vh] sticky top-0 lg:block hidden p-5">
+		<div className="dark:bg-dark-deep bg-white  col-span-3 lg:w-[35%] h-[100vh] sticky top-0 lg:block hidden p-5">
 			<div className="flex items-center">
 				{" "}
 				<svg className="mr-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,21 +12,21 @@ const Right = () => {
 						className="fill-current text-light-text dark:text-[#f2f2f2]"
 					/>
 				</svg>
-				<span className="dark:text-white text-light-text text-lg font-bold">Find</span>
+				<span className="text-lg font-bold dark:text-white text-light-text">Find</span>
 			</div>
 
-			<div className="flex mt-5 items-center justify-between">
+			<div className="flex items-center justify-between mt-5">
 				<input
 					type="text"
-					className="p-2 text-base h-10 dark:bg-dark-cloud bg-light-grayish rounded-md mr-2"
+					className="h-10 p-2 mr-2 text-base rounded-md dark:bg-dark-cloud bg-light-grayish"
 					placeholder="Search people..."
 				/>
-				<button className="bg-primary-purple px-4 py-2 text-base h-10 rounded-md">Search</button>
+				<button className="h-10 px-4 py-2 text-base rounded-md bg-primary-purple">Search</button>
 			</div>
 
 			<div className="flex items-center justify-between mt-6 mb-4">
 				<h2 className="text-lg font-bold text-light-text dark:text-white">Recommended</h2>
-				<button className="border rounded-lg p-1 px-2 text-sm text-light-text dark:text-white dark:border-white border-light-text">
+				<button className="p-1 px-2 text-sm border rounded-lg text-light-text dark:text-white dark:border-white border-light-text">
 					See more
 				</button>
 			</div>
