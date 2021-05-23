@@ -1,10 +1,11 @@
+import cn from "classnames";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { PostDTO } from "types";
 
 import { useRef, useState } from "react";
 import { useClickAway } from "react-use";
 
-import { User } from ".";
+import { PostMenu, User } from ".";
 
 type Props = PostDTO;
 
@@ -18,7 +19,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 	});
 
 	const buttonClassName =
-		"dark:bg-dark-cloud bg-white dark:text-white text-light-text px-2 py-2 w-[90px] rounded-lg text-sm font-bold flex items-center justify-center";
+		"dark:bg-dark-cloud bg-white dark:text-white text-light-text px-2 py-2 w-[100%] lg:w-[90px] rounded-lg text-sm font-bold flex items-center justify-center";
 	const menuMotion = {
 		hidden: { y: 10, opacity: 0 },
 		show: {
@@ -32,62 +33,15 @@ const PostCard = ({ title, user, content, image }: Props) => {
 		show: { y: 0, opacity: 1 },
 	};
 	return (
-		<div className="mb-5 w-96">
+		<div className="w-full mb-5">
 			<User {...user} />
 			<div className="relative px-4 py-3 bg-white rounded-lg dark:bg-dark-cloud dark:text-white text-light-text">
 				<h2 className="mb-2 text-lg font-bold">{title}</h2>
 				<p className="text-sm font-medium">{content}</p>
 
-				<div ref={menuButtonRef}>
-					<div
-						className="absolute w-8 h-8 bg-white rounded-full cursor-pointer dark:bg-dark-cloud -right-10 top-4 dark:hover:bg-dark-lie hover:bg-white"
-						onClick={() => setMenuOpened(!menuOpened)}>
-						<div className="flex justify-between p-[7px] pt-[13.5px]">
-							<div className="w-1 h-1 rounded-full dark:bg-white bg-light-text"></div>
-							<div className="w-1 h-1 rounded-full dark:bg-white bg-light-text"></div>
-							<div className="w-1 h-1 rounded-full dark:bg-white bg-light-text"></div>
-						</div>
-					</div>
-					<AnimatePresence>
-						{menuOpened && (
-							<motion.ul
-								key="menu"
-								initial="hidden"
-								animate="show"
-								variants={menuMotion}
-								exit={{ opacity: 0, y: 10 }}
-								transition={{ type: "spring", duration: 0.2, bounce: 0.2 }}
-								className="absolute top-0 w-48 px-1 py-2 bg-white -right-60 rounded-xl dark:bg-dark-cloud">
-								<motion.li
-									variants={menuItemMotion}
-									initial="hidden"
-									animate="show"
-									transition={{ delay: 0.01 }}
-									className="p-3 rounded-lg cursor-pointer select-none dark:hover:bg-dark-lie hover:bg-light-grayish">
-									Item
-								</motion.li>
-								<motion.li
-									variants={menuItemMotion}
-									initial="hidden"
-									animate="show"
-									transition={{ delay: 0.03 }}
-									className="p-3 rounded-lg cursor-pointer select-none dark:hover:bg-dark-lie hover:bg-light-grayish">
-									Item 2
-								</motion.li>
-								<motion.li
-									variants={menuItemMotion}
-									initial="hidden"
-									animate="show"
-									transition={{ delay: 0.05 }}
-									className="p-3 rounded-lg cursor-pointer select-none dark:hover:bg-dark-lie hover:bg-light-grayish">
-									Item 3
-								</motion.li>
-							</motion.ul>
-						)}
-					</AnimatePresence>
-				</div>
+				<PostMenu classes="sm:block hidden absolute" />
 			</div>
-			<div className="flex justify-between mt-2">
+			<div className="flex justify-between gap-2 mt-2">
 				<button className={buttonClassName}>
 					<svg className="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -121,7 +75,7 @@ const PostCard = ({ title, user, content, image }: Props) => {
 
 					<span>999</span>
 				</button>
-				<button className={buttonClassName}>
+				<button className={cn(buttonClassName, "hidden sm:flex")}>
 					<svg className="mr-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M13.8125 17H2.125C0.951395 17 0 16.0486 0 14.875V3.1875C0 2.01389 0.951395 1.0625 2.125 1.0625H6.375V3.1875H2.125V14.875H13.8125V10.625H15.9375V14.875C15.9375 16.0486 14.9861 17 13.8125 17ZM8.18125 10.3137L6.68313 8.81131L13.3694 2.125H9.5625V0H17V7.4375H14.875V3.62844L8.18125 10.3137Z"

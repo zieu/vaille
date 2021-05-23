@@ -41,6 +41,10 @@ a {
 		border-radius: 50%;
 		left: 6px;
 		top: calc(50% - 3px);
+		display: none;
+		@media (min-width: 976px) {
+			display: block;
+		}
 	}
 	&--light {
 		background: #efeff3;

@@ -79,7 +79,7 @@ const mock: PostDTO[] = [
 
 const Home = () => {
 	return (
-		<div className="h-full min-h-screen">
+		<div className="h-full min-h-screen sm:pr-10 pr-0 md:w-full lg:w-[450px]">
 			<div className="p-6">
 				{mock.map((props, index) => (
 					<PostCard {...props} key={index} />
