@@ -18,8 +18,8 @@ const User = ({ avatar, isFollowed, name }: Props) => {
 				/>
 				<span className="font-bold">{name}</span>
 			</div>
-			<div>
-				<PostMenu classes="block sm:hidden" />
+			<div className="relative">
+				<PostMenu classes="block sm:hidden" itemsClasses="top-10" />
 				<div className="hidden sm:block">
 					{isFollowed ? (
 						<button className="px-2 py-1 text-sm font-bold text-white rounded-lg bg-primary-purple border-primary-purple focus:outline-none focus:ring-2">
