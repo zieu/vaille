@@ -29,12 +29,12 @@ const PostMenu = ({ classes, itemsClasses }: Props) => {
 		show: { y: 0, opacity: 1 },
 	};
 
-	const closePostMenu = () => setPostMenu(false);
 	useEffect(() => {
-		window.addEventListener("scroll", closePostMenu);
+		const closePostMenu = () => setPostMenu(false);
+		window.addEventListener("mousewheel", closePostMenu);
 
 		return () => {
-			window.removeEventListener("scroll", closePostMenu);
+			window.removeEventListener("mousewheel", closePostMenu);
 		};
 	}, []);
 
