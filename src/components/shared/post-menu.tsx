@@ -11,8 +11,9 @@ type Props = {
 const PostMenu = ({ classes, itemsClasses }: Props) => {
 	const [postMenu, setPostMenu] = useState<boolean>(false);
 
-	const menuButtonRef = useRef(null);
-	const menuRef = useRef(null);
+	const menuButtonRef = useRef<RefObject<HTMLElement> | HTMLElement | any>(null);
+	const menuRef = useRef<HTMLUListElement>(null);
+	const [y, setY] = useState<number | undefined>(100);
 	// closing menu when clicking away
 	useClickAway(menuButtonRef, () => {
 		setPostMenu(false);
@@ -32,13 +33,22 @@ const PostMenu = ({ classes, itemsClasses }: Props) => {
 	};
 
 	useEffect(() => {
-		if (postMenu) {
-			document.body.style.overflowY = "hidden";
+		if (y && y < 80) {
+			document.body.classList.add("scroll-lock");
+			setPostMenu(false);
 		}
-		return () => {
-			document.body.style.overflow = "unset";
+	}, [y]);
+
+	useEffect(() => {
+		const closePostMenu = () => {
+			setY(menuRef.current?.getBoundingClientRect().y);
 		};
-	}, [postMenu]);
+		window.addEventListener("scroll", closePostMenu);
+
+		return () => {
+			window.removeEventListener("scroll", closePostMenu);
+		};
+	}, []);
 
 	return (
 		<div ref={menuButtonRef} className="z-30">
