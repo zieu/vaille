@@ -1,37 +1,16 @@
 import cn from "classnames";
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { PostDTO } from "types";
 
-import { useRef, useState } from "react";
-import { useClickAway } from "react-use";
+import { useState } from "react";
 
 import { PostMenu, User } from ".";
 
 type Props = PostDTO;
 
 const PostCard = ({ title, user, content, image }: Props) => {
-	const [menuOpened, setMenuOpened] = useState<boolean>(false);
-
-	// closing menu when clicking away
-	const menuButtonRef = useRef(null);
-	useClickAway(menuButtonRef, () => {
-		setMenuOpened(false);
-	});
-
 	const buttonClassName =
 		"dark:bg-dark-cloud bg-white dark:text-white text-light-text px-2 py-2 w-[100%] lg:w-[90px] rounded-lg text-sm font-bold flex items-center justify-center";
-	const menuMotion = {
-		hidden: { y: 10, opacity: 0 },
-		show: {
-			y: 0,
-			x: 0,
-			opacity: 1,
-		},
-	};
-	const menuItemMotion = {
-		hidden: { y: 20, opacity: 0 },
-		show: { y: 0, opacity: 1 },
-	};
+
 	return (
 		<div className="w-full mb-5">
 			<User {...user} />

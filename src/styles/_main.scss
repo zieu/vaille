@@ -63,3 +63,16 @@ a {
 .menu-icon--light * {
 	fill: #252532;
 }
+
+.post-menu {
+	&::before {
+		content: "";
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 30;
+		top: 0;
+		left: 0;
+	}
+}
