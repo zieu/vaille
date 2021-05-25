@@ -34,13 +34,9 @@ const PostMenu = ({ classes, itemsClasses }: Props) => {
 	useEffect(() => {
 		if (postMenu) {
 			document.body.style.overflowY = "hidden";
-			document.body.style.paddingRight = "16px";
-			document.body.style.background = "#eee";
 		}
 		return () => {
 			document.body.style.overflow = "unset";
-			document.body.style.paddingRight = "0";
-			document.body.style.background = "unset";
 		};
 	}, [postMenu]);
 
