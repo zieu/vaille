@@ -1,6 +1,6 @@
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useClickAway } from "react-use";
 
 type Props = {
@@ -28,6 +28,15 @@ const PostMenu = ({ classes, itemsClasses }: Props) => {
 		hidden: { y: 20, opacity: 0 },
 		show: { y: 0, opacity: 1 },
 	};
+
+	const closePostMenu = () => setPostMenu(false);
+	useEffect(() => {
+		window.addEventListener("scroll", closePostMenu);
+
+		return () => {
+			window.removeEventListener("scroll", closePostMenu);
+		};
+	}, []);
 
 	return (
 		<div ref={menuButtonRef} className="z-30">
