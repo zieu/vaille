@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import { useClickAway } from "react-use";
 
 type Props = {
@@ -10,8 +10,10 @@ type Props = {
 
 const PostMenu = ({ classes, itemsClasses }: Props) => {
 	const [postMenu, setPostMenu] = useState<boolean>(false);
-	// closing menu when clicking away
+
 	const menuButtonRef = useRef(null);
+	const menuRef = useRef(null);
+	// closing menu when clicking away
 	useClickAway(menuButtonRef, () => {
 		setPostMenu(false);
 	});
@@ -30,13 +32,17 @@ const PostMenu = ({ classes, itemsClasses }: Props) => {
 	};
 
 	useEffect(() => {
-		const closePostMenu = () => setPostMenu(false);
-		window.addEventListener("mousewheel", closePostMenu);
-
+		if (postMenu) {
+			document.body.style.overflowY = "hidden";
+			document.body.style.paddingRight = "16px";
+			document.body.style.background = "#eee";
+		}
 		return () => {
-			window.removeEventListener("mousewheel", closePostMenu);
+			document.body.style.overflow = "unset";
+			document.body.style.paddingRight = "0";
+			document.body.style.background = "unset";
 		};
-	}, []);
+	}, [postMenu]);
 
 	return (
 		<div ref={menuButtonRef} className="z-30">
@@ -54,6 +60,7 @@ const PostMenu = ({ classes, itemsClasses }: Props) => {
 					<>
 						<div className="post-menu" onMouseDown={() => setPostMenu(false)}></div>
 						<motion.ul
+							ref={menuRef}
 							key="menu"
 							initial="hidden"
 							animate="show"
