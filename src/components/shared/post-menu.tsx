@@ -10,7 +10,6 @@ type Props = {
 
 const PostMenu = ({ classes, itemsClasses }: Props) => {
 	const [postMenu, setPostMenu] = useState<boolean>(false);
-
 	const menuButtonRef = useRef<RefObject<HTMLElement> | HTMLElement | any>(null);
 	const menuRef = useRef<HTMLUListElement>(null);
 	const [y, setY] = useState<number | undefined>(100);

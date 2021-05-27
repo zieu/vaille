@@ -16,7 +16,13 @@ type Action =
 			type: "CLOSE_POST_MENU";
 	  };
 
-export const UIContext = React.createContext<State | any>(initialState);
+type Values = {
+	openPostMenu: () => void;
+	closePostMenu: () => void;
+	isPostMenuVisible: boolean;
+};
+
+export const UIContext = React.createContext(initialState);
 
 UIContext.displayName = "UIContext";
 
@@ -44,7 +50,7 @@ export const UIProvider: FC = (props) => {
 	const closePostMenu = () => dispatch({ type: "CLOSE_POST_MENU" });
 
 	const value = useMemo(
-		(): { openPostMenu: () => void; closePostMenu: () => void } => ({
+		() => ({
 			...state,
 			openPostMenu,
 			closePostMenu,

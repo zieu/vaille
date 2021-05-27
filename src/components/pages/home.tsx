@@ -1,5 +1,7 @@
 import { PostDTO } from "types";
 
+import { Scrollbars } from "react-custom-scrollbars";
+
 import { PostCard } from "components/shared";
 
 const mock: PostDTO[] = [
@@ -78,14 +80,19 @@ const mock: PostDTO[] = [
 ];
 
 const Home = () => {
+	let renderThumb = () => {
+		return <div className="rounded bg-primary-purple" />;
+	};
 	return (
-		<div className="h-full min-h-screen sm:pr-10 pr-0 md:w-full lg:w-[450px]">
-			<div className="p-6">
-				{mock.map((props, index) => (
-					<PostCard {...props} key={index} />
-				))}
+		<Scrollbars universal style={{ height: "calc(100vh - 60px)" }} renderThumbVertical={renderThumb} thumbSize={50}>
+			<div className="h-full min-h-screen sm:pr-10 pr-0 md:w-full lg:w-[450px]">
+				<div className="p-6">
+					{mock.map((props, index) => (
+						<PostCard {...props} key={index} />
+					))}
+				</div>
 			</div>
-		</div>
+		</Scrollbars>
 	);
 };
 
