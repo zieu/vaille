@@ -1,8 +1,6 @@
 import cn from "classnames";
 import { PostDTO } from "types";
 
-import { useState } from "react";
-
 import { PostMenu, User } from ".";
 
 type Props = PostDTO;

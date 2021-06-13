@@ -1,4 +1,4 @@
-import RecommendedContainer from "./_components/recommended-container";
+import RecommendedContainer from "components/recommended-container";
 
 const Right = () => {
 	return (

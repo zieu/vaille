@@ -1,3 +1,4 @@
+import { ApolloProvider } from "@apollo/client";
 import NProgress from "nprogress";
 import "tailwindcss/tailwind.css";
 import { PageWithLayout } from "types";
@@ -10,6 +11,8 @@ import Router from "next/router";
 import { Fragment } from "react";
 
 import "../assets/fonts/fonts.css";
+
+import { useApollo } from "services/api";
 
 import "styles/app.scss";
 
@@ -24,16 +27,20 @@ type Props = AppProps & {
 
 function MyApp({ Component, pageProps }: Props) {
 	const Layout = Component.Layout ?? Fragment;
+	const client = useApollo(pageProps.initialApolloState);
+
 	return (
 		<>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 			</Head>
-			<ThemeProvider attribute="class" defaultTheme="dark">
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
-			</ThemeProvider>
+			<ApolloProvider client={client}>
+				<ThemeProvider attribute="class" defaultTheme="dark">
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</ThemeProvider>
+			</ApolloProvider>
 		</>
 	);
 }

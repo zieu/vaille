@@ -1,9 +1,9 @@
+import { PageTitle } from "components";
 import { withLayout } from "containers";
 
 import Head from "next/head";
 
 import Page from "components/pages/home";
-import { PageTitle } from "components/shared";
 
 function Home() {
 	return (

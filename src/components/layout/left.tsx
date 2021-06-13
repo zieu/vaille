@@ -1,8 +1,10 @@
+// import { useUI } from "context/ui";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Menu } from "components/menu";
+
 import { Logo } from "..";
-import { Menu } from "./_components";
 
 const Left = () => {
 	return (

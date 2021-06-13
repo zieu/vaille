@@ -1,7 +1,8 @@
+import { ManagedUIContext } from "context/ui";
+
 import React from "react";
 
 import { Left, Right } from ".";
-import { ManagedUIContext } from "../context";
 
 type Props = {
 	children?: React.FC | React.ReactNode;

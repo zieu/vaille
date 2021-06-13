@@ -1,6 +1,5 @@
+import { Layout } from "components";
 import { PageWithLayout } from "types";
-
-import { Layout } from "components/shared";
 
 const withLayout = (Component: PageWithLayout) => {
 	Component.Layout = Layout;
