@@ -1,4 +1,4 @@
-import { ManagedUIContext } from "context/ui";
+import { ManagedUIContext } from "context";
 
 import React from "react";
 
