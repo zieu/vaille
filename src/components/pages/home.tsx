@@ -9,15 +9,15 @@ const Home = () => {
 		return <div className="rounded bg-primary-purple" />;
 	};
 
-	const POST_QUERY = gql`
-		query {
-			posts: posts {
-				title
-			}
-		}
-	`;
+	// const POST_QUERY = gql`
+	// 	query {
+	// 		posts: posts {
+	// 			title
+	// 		}
+	// 	}
+	// `;
 
-	const { data, loading, error } = useQuery(POST_QUERY);
+	// const { data, loading, error } = useQuery(POST_QUERY);
 
 	return (
 		<Scrollbars universal style={{ height: "calc(100vh - 60px)" }} renderThumbVertical={renderThumb} thumbSize={50}>
