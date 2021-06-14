@@ -1,11 +1,12 @@
+import { ProfileActions } from "components";
+
 import Link from "next/link";
 
 const Profile = () => {
 	return (
 		<div className="h-full min-h-screen">
-			<h2 className="title">This is liked page</h2>
 			<Link href="/">
-				<a className="text-purple-700 underline">go to home</a>
+				<ProfileActions />
 			</Link>
 		</div>
 	);
