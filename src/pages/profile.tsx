@@ -3,7 +3,7 @@ import { withLayout } from "containers";
 
 import Head from "next/head";
 
-import Page from "components/pages/liked";
+import Page from "components/pages/profile";
 
 function Profile() {
 	return (
