@@ -41,11 +41,11 @@ const ProfileActions = () => {
 					</div>
 				</div>
 				<div className="text-xl font-bold mt-7">
-					<div>
+					<div className="mb-8">
 						<h1>Posts</h1>
 					</div>
 					<div className="h-full min-h-screen sm:pr-10 pr-0 md:w-full lg:w-[450px]">
-						<div className="p-6">
+						<div>
 							{mock.map((props, index) => (
 								<PostCard {...props} key={index} />
 							))}
