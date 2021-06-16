@@ -1,4 +1,4 @@
-import { RecommendedContainer } from "components";
+import { Recommended, Profile } from "components";
 
 const Right = () => {
 	return (
@@ -24,14 +24,8 @@ const Right = () => {
 				<button className="h-10 px-4 py-2 text-base rounded-md bg-primary-purple">Search</button>
 			</div>
 
-			<div className="flex items-center justify-between mt-6 mb-4">
-				<h2 className="text-lg font-bold text-light-text dark:text-white">Recommended</h2>
-				<button className="p-1 px-2 text-sm border rounded-lg text-light-text dark:text-white dark:border-white border-light-text">
-					See more
-				</button>
-			</div>
-
-			<RecommendedContainer />
+			<Recommended />
+			<Profile />
 		</div>
 	);
 };
